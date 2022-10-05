@@ -981,7 +981,7 @@ func extOrPortSetMetadata(s io.ReadWriter, addr, methodName string) error {
 
 func extOrPortSetup(s net.Conn, timeout time.Duration,
 	info *ServerInfo, addr, methodName string) error {
-	err := s.SetDeadline(time.Now().Add(5 * time.Second))
+	err := s.SetDeadline(time.Now().Add(timeout))
 	if err != nil {
 		return err
 	}
